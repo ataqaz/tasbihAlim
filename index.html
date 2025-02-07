@@ -133,6 +133,11 @@
             .counter {
                 margin: 0;
                 order: 1; /* Цифра слева */
+                position: absolute;
+                left: 20%;
+                transform: translateX(-50%);
+                text-align: left;
+                width: 100px; /* Фиксированная ширина для предотвращения смещения */
             }
 
             .button {
@@ -155,18 +160,18 @@
             .footer {
                 position: absolute;
                 bottom: 10px;
-                width: 100%;
+                right: 20px;
+                width: auto;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
                 align-items: flex-end;
-                padding: 0 20px;
-                box-sizing: border-box;
+                text-align: right;
             }
 
             .footer div {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-end;
             }
 
             .footer div:first-child {
@@ -194,7 +199,7 @@
     <button class="reset-button" onclick="resetCounter()">0</button>
 
     <div class="footer">
-        <div>Т А С Б И Х</div>
+        <div>Т А С Б И Х</div><br>
         <div><a href="https://t.me/byalki" target="_blank">B y&emsp;B y a l k i</a></div>
     </div>
 
