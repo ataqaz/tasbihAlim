@@ -134,15 +134,18 @@
                 margin: 0;
                 order: 1; /* Цифра слева */
                 position: absolute;
-                left: 20%; /* Смещение цифры левее */
+                left: 10%; /* Смещение цифры левее */
                 transform: translateX(-50%);
                 text-align: left;
                 width: 100px; /* Фиксированная ширина для предотвращения смещения */
             }
 
             .button {
-                margin: 0 0 0 100px; /* Смещение кнопки правее */
+                margin: 0; /* Убираем отступы */
                 order: 2; /* Кнопка по центру */
+                position: absolute;
+                left: 50%; /* Центрируем кнопку по горизонтали */
+                transform: translateX(-50%); /* Точное центрирование */
             }
 
             .reset-button {
