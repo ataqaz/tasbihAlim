@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Счетчик</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #112611; /* Темно-зеленый фон */
+            color: #ffffff; /* Белый текст */
+            margin: 0;
+            position: relative;
+        }
+
+        .counter {
+            font-size: 64px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #ffffff; /* Неоново-зеленый цвет для счетчика */
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #fafafa; /* Неоновый эффект */
+            margin-top: -100px; /* Смещаем счетчик вверх */
+        }
+
+        .button {
+            position: relative;
+            width: 210px; /* Увеличено */
+            height: 210px; /* Увеличено */
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1); /* Белый прозрачный фон */
+            border: 4px solid #ffffff; /* Белая обводка */
+            color: #ffffff;
+            font-size: 48px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff; /* Белый неоновый эффект */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            outline: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            backdrop-filter: blur(10px); /* Размытие фона */
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+        }
+
+        .reset-button {
+            position: absolute;
+            width: 100px; /* Уменьшено */
+            height: 100px; /* Уменьшено */
+            border-radius: 50%;
+            background-color: rgba(255, 255, 0, 0.1); /* Желтый прозрачный фон */
+            border: 4px solid #e4e489; /* Желтая обводка */
+            color: #e4e489;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #e4e489, 0 0 40px #e4e489; /* Желтый неоновый эффект */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            backdrop-filter: blur(10px); /* Размытие фона */
+            top: 50%; /* Позиционирование */
+            left: 50%;
+            transform: translate(-50%, 50%); /* Смещение вниз и вправо */
+        }
+
+        .reset-button:active {
+            transform: translate(-50%, 50%) scale(0.95);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .footer a {
+            color: #ffffff; /* Неоново-зеленый цвет для ссылки */
+            text-decoration: none;
+            font-size: 21px;
+            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Неоновый эффект */
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter" id="counter">0</div>
+    <button class="button" onclick="incrementCounter()">▲</button>
+    <button class="reset-button" onclick="resetCounter()">0</button>
+
+    <div class="footer">
+        Т А С Б И Х<br><br>
+        <a href="https://t.me/byalki" target="_blank">By Byalki</a>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function incrementCounter() {
+            count += 1;
+            document.getElementById('counter').textContent = count;
+        }
+
+        function resetCounter() {
+            count = 0;
+            document.getElementById('counter').textContent = count;
+        }
+    </script>
+
+</body>
+</html>
