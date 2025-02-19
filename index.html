@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Тасбих</title>
     <style>
         body {
@@ -133,8 +133,14 @@
 
     <script>
         let count = 0;
+        let lastTapTime = 0; // Время последнего нажатия
 
         function incrementCounter() {
+            const currentTime = new Date().getTime();
+            if (currentTime - lastTapTime < 1000) {
+                return; // Если прошло меньше 1 секунды, игнорируем нажатие
+            }
+            lastTapTime = currentTime; // Обновляем время последнего нажатия
             count += 1;
             document.getElementById('counter').textContent = count;
         }
